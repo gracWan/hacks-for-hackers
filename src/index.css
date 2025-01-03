@@ -30,3 +30,17 @@ body {
   .navbar navbar-expand-lg bg-body-tertiary{
     width: 100vh;
   }
+
+  .UserEntry{
+    border: solid;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .UserProfile{
+    border-radius: 50%;
+    height:auto;
+    width:40px;
+  }
