@@ -32,7 +32,7 @@ body {
   }
 
   .UserEntry{
-    border: solid;
+    border-bottom: solid;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-evenly;

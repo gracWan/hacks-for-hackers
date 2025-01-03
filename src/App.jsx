@@ -9,14 +9,12 @@ import User from './components/User'
 export default function App() {
   return (
     <>
-      <Navbar/>
-      <User/>
+      <Routes>
+      <Route path = "/hacks-for-hackers" element ={<Login/>}/>
+      <Route path = "/hacks-for-hackers/Register" element ={<Register/>}/>
+      </Routes>
     </>
     
   )
 }
 
-/*<Routes>
-      <Route path = "/hacks-for-hackers" element ={<Login/>}/>
-      <Route path = "/hacks-for-hackers/Register" element ={<Register/>}/>
-    </Routes>*/

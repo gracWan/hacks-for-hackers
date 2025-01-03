@@ -22,7 +22,7 @@ export default function Navbar(){
                     <a className="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link" href="#">Link</a>
+                    <Link to = "/hacks-for-hacker" className="nav-link">Link</Link>
                     </li>
                     <li className="nav-item dropdown">
                     <a
