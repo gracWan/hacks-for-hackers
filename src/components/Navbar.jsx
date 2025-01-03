@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar(){
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -20,7 +22,7 @@ export default function Navbar(){
                     <a className="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link" href="#">Link</a>
+                    <Link to = "hacks-for-hackers/link"className="nav-link" >Link</Link>
                     </li>
                     <li className="nav-item dropdown">
                     <a
