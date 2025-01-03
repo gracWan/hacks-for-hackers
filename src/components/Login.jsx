@@ -1,6 +1,23 @@
 import { Link } from "react-router-dom";
+import { getDatabase, ref, onValue } from "firebase/database";
+import { getAuth } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import app from "../main";
 
 export default function Login(){
+  const auth = getAuth(app);
+  const handleClick = () => {
+    signInWithEmailAndPassword(auth, "gracewater1234@gmail.com", "Pp09/25/2007?")
+  .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    console.log("User Info:", user);
+
+  })
+  .catch((error) => {
+    console.error("Error signing in:", error.message);
+  });
+  };
     return (
     <section className="h-100 gradient-form" style={{ backgroundColor: "#eee" }}>
       <div className="container py-5 h-100">
@@ -51,6 +68,7 @@ export default function Login(){
                           data-mdb-ripple-init
                           className="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
                           type="button"
+                          onClick = {handleClick}
                         >
                           Log in
                         </button>
