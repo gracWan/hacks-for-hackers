@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Login(){
     return (
     <section className="h-100 gradient-form" style={{ backgroundColor: "#eee" }}>
@@ -65,7 +67,9 @@ export default function Login(){
                           data-mdb-ripple-init
                           className="btn btn-outline-danger"
                         >
+                         <Link to ="/hacks-for-hackers/Register">
                           Create new
+                         </Link> 
                         </button>
                       </div>
                     </form>
