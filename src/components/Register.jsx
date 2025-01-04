@@ -20,6 +20,13 @@ export default function Login(){
     console.log("Password:", password);
     console.log("ConfirmPassword:", ConfirmPass);
 
+    if (password !== ConfirmPass) {
+      const errorMessage = "Passwords do not match!";
+      setError(errorMessage); // Set the error state
+      console.error(errorMessage); // Log the error message
+      return; // Prevent further execution
+    }
+
     try {
       // Create a new user with email and password
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);

@@ -8,8 +8,10 @@ import { useNavigate } from "react-router-dom";
 export default function Login(){
   const auth = getAuth(app);
   const navigate = useNavigate();
+  const [email, setEmail] = useState(""); // State to store the email input value
+  const [password, setPassword] = useState(""); // State to store the password input value
   const handleClick = () => {
-    signInWithEmailAndPassword(auth, "gracewater1234@gmail.com", "Pp09/25/2007?")
+    signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in
     const user = userCredential.user;
@@ -46,7 +48,8 @@ export default function Login(){
                           type="email"
                           id="form2Example11"
                           className="form-control"
-                          placeholder="Phone number or email address"
+                          placeholder="email address"
+                          value={email} onChange={(e) => setEmail(e.target.value)}
                         />
                         <label className="form-label" htmlFor="form2Example11">
                           Username
@@ -58,6 +61,7 @@ export default function Login(){
                           type="password"
                           id="form2Example22"
                           className="form-control"
+                          value={password} onChange={(e) => setPassword(e.target.value)}
                         />
                         <label className="form-label" htmlFor="form2Example22">
                           Password
