@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom"
 import Login from './components/Login'
 import Register from "./components/Register"
 import Home from "./components/Home";
+import Meeting from './components/Meeting.jsx';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Route path = "/hacks-for-hackers" element ={<Login/>}/>
       <Route path = "/hacks-for-hackers/Register" element ={<Register/>}/>
       <Route  path = "/hacks-for-hackers/Home" element ={<Home/>}/>
+      <Route  path = "/hacks-for-hackers/Meeting" element ={<Meeting/>}/>
       </Routes>
     </>
     

@@ -55,7 +55,9 @@ export default function Navbar(){
                     <a className="nav-link disabled" aria-disabled="true">Disabled</a>
                     </li>
                     <li className="nav-item">
-                    <img src= {Camera} alt = "camera icon by Kiranshastry" className="icons" aria-current="page"/>
+                        <Link to = "/hacks-for-hackers/Meeting">
+                        <img src= {Camera} alt = "camera icon by Kiranshastry" className="icons" aria-current="page"/>
+                        </Link>
                     </li>
                 </ul>
                 <form className="d-flex" role="search">
