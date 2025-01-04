@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getFirestore, setDoc, doc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import app from "../main";
 
 export default function Login(){
   const auth = getAuth(app);
+  const db = getFirestore(app);
   const [name, setName] = useState(""); // State to store the name input value
   const [email, setEmail] = useState(""); // State to store the email input value
+  const [language, setLanguage] = useState(""); // State to store the name input value
   const [password, setPassword] = useState(""); // State to store the password input value
   const [ConfirmPass, setConfirmPass] = useState(""); // State to store the password input value
   const navigate = useNavigate();
@@ -32,6 +35,14 @@ export default function Login(){
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       console.log("User registered:", user);
+      console.log(user.uid);
+      await setDoc(doc(db, "users", user.uid), {
+        name: name, // Save name to Firestore
+        email: email, // Save email to Firestore
+        language: language,
+        createdAt: new Date().toISOString(), // Store registration timestamp (optional)
+      });
+      console.log("worked")
       navigate("/hacks-for-hackers")
     } catch (error) {
       //setError(error.message); // Handle errors (e.g., email already in use)
@@ -68,6 +79,20 @@ export default function Login(){
                 <div data-mdb-input-init className="form-outline mb-4">
                   <input type="email" id="form3Example3cg" className="form-control form-control-lg" value={email} onChange={(e) => setEmail(e.target.value)}/>
                   <label className="form-label" htmlFor="form3Example3cg">Your Email</label>
+                </div>
+
+                <div class="form-outline mb-4">
+
+                  <select data-mdb-select-init value = {language} onChange={(e) => setLanguage(e.target.value)}>
+                    <option value="#" >Language </option>
+                    <option value="English">English</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Mandarin">Mandarin</option>
+                    <option value="French">French</option>
+                    <option value="Bengali">Bengali</option>
+                    <option value="#">Other</option>
+                  </select>
+
                 </div>
 
                 <div data-mdb-input-init className="form-outline mb-4">

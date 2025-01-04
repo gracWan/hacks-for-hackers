@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { getAuth } from "firebase/auth";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import app from "../main";
 import { useNavigate } from "react-router-dom";
 
@@ -10,17 +10,24 @@ export default function Login(){
   const navigate = useNavigate();
   const [email, setEmail] = useState(""); // State to store the email input value
   const [password, setPassword] = useState(""); // State to store the password input value
-  const handleClick = () => {
-    signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in
-    const user = userCredential.user;
-    console.log("User Info:", user);
-    navigate("/hacks-for-hackers/Home")
-  })
-  .catch((error) => {
-    console.error("Error signing in:", error.message);
-  });
+  const handleClick = async () => {  // Marked as async here
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      console.log("User Info:", user);
+
+      // If email is not verified, send verification email
+      if (!user.emailVerified) {
+        await sendEmailVerification(user);
+        console.log("Verification email sent.");
+      }
+
+      // Navigate to the home page
+      navigate("/hacks-for-hackers/Home");
+    } catch (error) {
+      console.error("Error signing in:", error.message);
+      setError(error.message); // Set the error state to display error message
+    }
   };
     return (
     <section className="h-100 gradient-form" style={{ backgroundColor: "#eee" }}>
