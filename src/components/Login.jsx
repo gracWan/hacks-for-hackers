@@ -1,18 +1,20 @@
 import { Link } from "react-router-dom";
-import { getDatabase, ref, onValue } from "firebase/database";
+import { useState } from "react";
 import { getAuth } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import app from "../main";
+import { useNavigate } from "react-router-dom";
 
 export default function Login(){
   const auth = getAuth(app);
+  const navigate = useNavigate();
   const handleClick = () => {
     signInWithEmailAndPassword(auth, "gracewater1234@gmail.com", "Pp09/25/2007?")
   .then((userCredential) => {
     // Signed in
     const user = userCredential.user;
     console.log("User Info:", user);
-
+    navigate("/hacks-for-hackers/Home")
   })
   .catch((error) => {
     console.error("Error signing in:", error.message);
@@ -72,6 +74,7 @@ export default function Login(){
                         >
                           Log in
                         </button>
+
                         <a className="text-muted" href="#!">
                           Forgot password?
                         </a>
