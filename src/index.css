@@ -54,3 +54,8 @@ body {
     flex-wrap: nowrap;
     flex-grow: 2;
   }
+
+  .icons{
+    width: 40px;
+    height: auto;
+  }
