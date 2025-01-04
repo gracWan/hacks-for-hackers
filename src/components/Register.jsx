@@ -1,7 +1,43 @@
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import app from "../main";
 
 export default function Login(){
-    return (
+  const auth = getAuth(app);
+  const [name, setName] = useState(""); // State to store the name input value
+  const [email, setEmail] = useState(""); // State to store the email input value
+  const [password, setPassword] = useState(""); // State to store the password input value
+  const [ConfirmPass, setConfirmPass] = useState(""); // State to store the password input value
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Password:", password);
+    console.log("ConfirmPassword:", ConfirmPass);
+
+    try {
+      // Create a new user with email and password
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      console.log("User registered:", user);
+      navigate("/hacks-for-hackers")
+    } catch (error) {
+      //setError(error.message); // Handle errors (e.g., email already in use)
+      console.error("Error registering user:", error.message);
+    }
+
+    setName("");
+    setEmail("");
+    setPassword("");
+    setConfirmPass("");
+  };
+  
+  return (
         <section
   className="vh-100 bg-image"
   style={{
@@ -16,30 +52,30 @@ export default function Login(){
             <div className="card-body p-5">
               <h2 className="text-uppercase text-center mb-5">Create an account</h2>
 
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div data-mdb-input-init className="form-outline mb-4">
-                  <input type="text" id="form3Example1cg" className="form-control form-control-lg" />
+                  <input type="text" id="form3Example1cg" className="form-control form-control-lg" value ={name} onChange={(e) => setName(e.target.value)}/>
                   <label className="form-label" htmlFor="form3Example1cg">Your Name</label>
                 </div>
 
                 <div data-mdb-input-init className="form-outline mb-4">
-                  <input type="email" id="form3Example3cg" className="form-control form-control-lg" />
+                  <input type="email" id="form3Example3cg" className="form-control form-control-lg" value={email} onChange={(e) => setEmail(e.target.value)}/>
                   <label className="form-label" htmlFor="form3Example3cg">Your Email</label>
                 </div>
 
                 <div data-mdb-input-init className="form-outline mb-4">
-                  <input type="password" id="form3Example4cg" className="form-control form-control-lg" />
+                  <input type="password" id="form3Example4cg" className="form-control form-control-lg" value={password} onChange={(e) => setPassword(e.target.value)}/>
                   <label className="form-label" htmlFor="form3Example4cg">Password</label>
                 </div>
 
                 <div data-mdb-input-init className="form-outline mb-4">
-                  <input type="password" id="form3Example4cdg" className="form-control form-control-lg" />
+                  <input type="password" id="form3Example4cdg" className="form-control form-control-lg" value={ConfirmPass} onChange={(e) => setConfirmPass(e.target.value)}/>
                   <label className="form-label" htmlFor="form3Example4cdg">Repeat your password</label>
                 </div>
 
                 <div className="d-flex justify-content-center">
                   <button
-                    type="button"
+                    type="submit"
                     data-mdb-button-init
                     data-mdb-ripple-init
                     className="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
