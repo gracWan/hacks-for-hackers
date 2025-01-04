@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import App from './App.jsx'
-import Meeting from './components/Meeting.jsx';
+import Message from './components/Message.jsx';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBigaCtThpdxPVOPWAGpKgGVrZIkaS4RNI",

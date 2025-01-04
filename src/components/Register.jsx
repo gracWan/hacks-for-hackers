@@ -11,6 +11,7 @@ export default function Login(){
   const [name, setName] = useState(""); // State to store the name input value
   const [email, setEmail] = useState(""); // State to store the email input value
   const [language, setLanguage] = useState(""); // State to store the name input value
+  const [languageLearn, setLanguageLearn] = useState(""); // State to store the name input value
   const [password, setPassword] = useState(""); // State to store the password input value
   const [ConfirmPass, setConfirmPass] = useState(""); // State to store the password input value
   const navigate = useNavigate();
@@ -40,6 +41,7 @@ export default function Login(){
         name: name, // Save name to Firestore
         email: email, // Save email to Firestore
         language: language,
+        languageLearn: languageLearn,
         createdAt: new Date().toISOString(), // Store registration timestamp (optional)
       });
       console.log("worked")
@@ -92,8 +94,27 @@ export default function Login(){
                     <option value="Bengali">Bengali</option>
                     <option value="#">Other</option>
                   </select>
-
+                  <div>
+                    <label className="form-label" htmlFor="form3Example4cg">Language you know</label>
+                  </div>
                 </div>
+
+                <div class="form-outline mb-4">
+
+                  <select data-mdb-select-init value = {languageLearn} onChange={(e) => setLanguageLearn(e.target.value)}>
+                    <option value="#" >Language </option>
+                    <option value="English">English</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Mandarin">Mandarin</option>
+                    <option value="French">French</option>
+                    <option value="Bengali">Bengali</option>
+                    <option value="#">Other</option>
+                  </select>
+                  <div>
+                    <label className="form-label" htmlFor="form3Example4cg">What you learn!</label>
+                  </div>
+                  
+              </div>
 
                 <div data-mdb-input-init className="form-outline mb-4">
                   <input type="password" id="form3Example4cg" className="form-control form-control-lg" value={password} onChange={(e) => setPassword(e.target.value)}/>
