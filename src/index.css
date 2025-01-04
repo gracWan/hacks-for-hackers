@@ -4,6 +4,36 @@ body {
   min-height: 100vh;
 }
 
+ 
+.sidenav {
+  height: 100%;
+  width: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #F8F9FA;
+  overflow-x: hidden;
+  padding-top: 200px;
+}
+
+.sidenav a {
+  padding: 10px 10px 10px 10px;
+  margin: 10px 0px 90px 0px;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  text-decoration: none;
+}
+
+.sidenav a:hover {
+  background-color: #029D52;
+  color: white;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+}
+
 .gradient-custom-2 {
   /* fallback for old browsers */
   background: #0b1091;
@@ -29,6 +59,7 @@ body {
 
   .navbar navbar-expand-lg bg-body-tertiary{
     width: 100vh;
+    margin-left: 60px;
   }
 
   .UserEntry{
