@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import App from './App.jsx'
+import Meeting from './components/Meeting.jsx';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBigaCtThpdxPVOPWAGpKgGVrZIkaS4RNI",
@@ -18,7 +19,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
 
 export default app;
 
