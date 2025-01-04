@@ -37,10 +37,20 @@ body {
     flex-wrap: nowrap;
     justify-content: space-evenly;
     align-items: center;
+    border-width: 0.5px;
+    border-color: grey;
   }
 
   .UserProfile{
     border-radius: 50%;
     height:auto;
     width:40px;
+    margin-left:40px;
+  }
+
+  .UserDetails{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    flex-grow: 2;
   }

@@ -1,10 +1,10 @@
 import Navbar from "./Navbar"
-import User from "./Entry"
+import Users from "./Users"
 export default function Home(){
     return(
         <>
             <Navbar/>
-            <User/>
+            <Users/>
         </>
     )
 }

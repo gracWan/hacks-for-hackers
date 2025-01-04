@@ -68,6 +68,7 @@ export default function Login(){
                           type="password"
                           id="form2Example22"
                           className="form-control"
+                          placeholder="password"
                           value={password} onChange={(e) => setPassword(e.target.value)}
                         />
                         <label className="form-label" htmlFor="form2Example22">
