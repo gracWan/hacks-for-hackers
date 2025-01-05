@@ -146,7 +146,6 @@ function MeetingView(props) {
           {joined && joined == "JOINED" ? (
             <div>
               <Controls />
-              //For rendering all the participants in the meeting
               {[...participants.keys()].map((participantId) => (
                 <ParticipantView
                   participantId={participantId}

@@ -184,5 +184,6 @@ option {
 }
 
 .container_meeting{
-  background-color: white;
+  background-color: black;
+  color: white;
 }
