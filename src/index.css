@@ -90,3 +90,10 @@ body {
     width: 40px;
     height: auto;
   }
+  .profileIcons{
+    width: 40px;
+    height: auto;
+    position: absolute;
+    right:0;
+    margin-right:10px;
+  }

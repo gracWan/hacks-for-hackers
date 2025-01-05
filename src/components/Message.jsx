@@ -14,7 +14,7 @@ import 'stream-chat-react/dist/css/v2/index.css';
 
 // other imports
 import 'stream-chat-react/dist/css/v2/index.css';
-import './layout.css';
+//import './layout.css';
 
 // Your Stream app information
 const apiKey = 'cyaw4h7bya7e';

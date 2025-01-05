@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import App from './App.jsx'
-import Message from './components/Message.jsx';
+import Profile from './components/Profile.jsx';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBigaCtThpdxPVOPWAGpKgGVrZIkaS4RNI",
@@ -26,7 +26,7 @@ export default app;
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <App/>
     </BrowserRouter>
   </StrictMode>,
 )

@@ -12,7 +12,7 @@ import {
 } from 'stream-chat-react';
 
 import 'stream-chat-react/dist/css/v2/index.css';
-import './layout.css';
+//import './layout.css';
 
 const apiKey = 'cyaw4h7bya7e';
 const userId = 'grace';
