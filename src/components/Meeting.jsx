@@ -113,9 +113,9 @@ function Controls(props) {
   const { leave, toggleMic, toggleWebcam } = useMeeting();
     return (
       <div>
-        <button onClick={() => leave()}>Leave</button>
-        <button onClick={() => toggleMic()}>toggleMic</button>
-        <button onClick={() => toggleWebcam()}>toggleWebcam</button>
+        <button onClick={() => leave()} class="btn btn-outline-primary ">Leave</button>
+        <button onClick={() => toggleMic()} class="btn btn-outline-primary ">toggleMic</button>
+        <button onClick={() => toggleWebcam()} class="btn btn-outline-primary ">toggleWebcam</button>
       </div>
     );
 }
@@ -157,7 +157,7 @@ function MeetingView(props) {
           ) : joined && joined == "JOINING" ? (
             <p>Joining the meeting...</p>
           ) : (
-            <button onClick={joinMeeting}>Join</button>
+            <button onClick={joinMeeting} class="btn btn-outline-primary ">Join</button>
           )}
         </div>
       );
