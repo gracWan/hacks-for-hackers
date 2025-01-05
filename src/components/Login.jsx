@@ -35,7 +35,7 @@ export default function Login(){
     }
   };
     return (
-    <section className="h-100 gradient-form no-scrollbar" style={{ backgroundColor: "#eee" }}>
+    <section className="h-100 gradient-form no-scrollbar" style={{ backgroundColor: "white"}}>
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-xl-10">
@@ -100,23 +100,26 @@ export default function Login(){
                         </a>
                       </div>
 
-                      <div className="d-flex align-items-center justify-content-center pb-4">
-                        <p className="mb-0 me-2">Don't have an account?</p>
-                         <Link to ="/hacks-for-hackers/Register">
-                          Create new
-                         </Link> 
-                      </div>
+                      
                     </form>
                   </div>
                 </div>
                 <div className="col-lg-6 d-flex align-items-center gradient-custom-2">
                   <div className="text-white px-3 py-4 p-md-5 mx-md-4">
-                    <h4 className="mb-4">Pitch title here</h4>
+                    <h4 className="mb-4">learn language, your way</h4>
                     <p className="small mb-0">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                       ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      <br></br><br></br><br></br>
+
+                      <div className="d-flex align-items-center justify-content-center pb-4">
+                        <p className="mb-0 me-2">Don't have an account?</p><br></br>
+                         <Link to ="/hacks-for-hackers/Register" className="button-link">
+                          Join us here
+                         </Link> 
+                      </div>
                     </p>
                   </div>
                 </div>
