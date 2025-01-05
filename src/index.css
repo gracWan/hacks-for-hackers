@@ -172,10 +172,6 @@ option {
   color: white;
 }
 
-.container_meeting{
-  background-color: black;
-}
-
 
 .MeetingBtn{
   background-color: rgb(23, 0, 233);
@@ -185,4 +181,8 @@ option {
 
 .custom-form {
   width:50px;
+}
+
+.container_meeting{
+  background-color: white;
 }
