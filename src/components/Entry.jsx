@@ -48,7 +48,7 @@ export default function Entry(props) {
         }}
         >
           {/* Render the Profile component */}
-          <Profile />
+          <Profile name = {props.name}/>
         </div>
       )}
     </article>

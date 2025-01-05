@@ -7,6 +7,7 @@ import Login from './components/Login'
 import Register from "./components/Register"
 import Home from "./components/Home";
 import Meeting from './components/Meeting.jsx';
+import Message from "./components/Message.jsx";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
       <Route path = "/hacks-for-hackers/Register" element ={<Register/>}/>
       <Route  path = "/hacks-for-hackers/Home" element ={<Home/>}/>
       <Route  path = "/hacks-for-hackers/Meeting" element ={<Meeting/>}/>
+      <Route  path = "/hacks-for-hackers/Message" element ={<Message/>}/>
       </Routes>
     </>
     

@@ -1,6 +1,7 @@
 import Chat from "../images/chat-icon.png";
+import { Link } from "react-router-dom";
 
-export default function Profile() {
+export default function Profile(props) {
     return (
       <section className="vh-100" >
         <div className="container py-5 h-100">
@@ -8,24 +9,15 @@ export default function Profile() {
             <div className="col col-xl-10">
               <div className="card mb-5" style={{ borderRadius: '15px' }}>
                 <div className="card-body p-4">
-                  <h3 className="mb-3">Program Title</h3>
-                  <p className="small mb-0">
-                    <i className="far fa-star fa-lg"></i> <span className="mx-2">|</span> Created by
-                    <strong>MDBootstrap</strong> on 11 April , 2021
-                  </p>
+                  <h3 className="mb-3">{props.name}</h3>
                   <hr className="my-4" />
                   <div className="d-flex justify-content-start align-items-center">
                     <p className="mb-0 text-uppercase">
                       <i className="fas fa-cog me-2"></i> <span className="text-muted small">settings</span>
                     </p>
-                    <p className="mb-0 text-uppercase">
-                      <i className="fas fa-link ms-4 me-2"></i> <span className="text-muted small">program link</span>
-                    </p>
-                    <p className="mb-0 text-uppercase">
-                      <i className="fas fa-ellipsis-h ms-4 me-2"></i> <span className="text-muted small">program link</span>
-                      <span className="ms-3 me-4">|</span>
-                    </p>
+                    <Link to = "/hacks-for-hackers/Message">
                     <img src = {Chat} className="profileIcons"/>
+                    </Link>
                   </div>
                 </div>
               </div>
