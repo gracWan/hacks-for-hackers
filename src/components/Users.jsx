@@ -12,7 +12,7 @@ export default function Users() {
     const fetchData = async () => {
       try {
         // Query to fetch only users where language is 'English'
-        const q = query(collection(db, "users"), where("language", "==", "English"));
+        const q = query(collection(db, "users"), where("language", "==", LanguageFilter));
         const querySnapshot = await getDocs(q);
         const tempHolder = [];
 

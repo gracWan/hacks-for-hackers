@@ -26,7 +26,7 @@ export default app;
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <Profile/>
+      <App/>
     </BrowserRouter>
   </StrictMode>,
 )

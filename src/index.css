@@ -89,9 +89,6 @@ body {
   .icons{
     width: 40px;
     height: auto;
-    position: absolute;
-    right:0;
-    margin-right:10px;
   }
   .profileIcons{
     width: 40px;
