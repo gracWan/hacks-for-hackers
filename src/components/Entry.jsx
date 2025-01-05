@@ -38,8 +38,8 @@ export default function Entry(props) {
           top: "100%", // Position below the image
           left: "50%",
           transform: "translateX(-50%)",
-          backgroundColor: "white",
-          border: "1px solid #ddd",
+          backgroundColor:"transparent",
+          border: "1px solid transparent",
           zIndex: 10,
           padding: "10px",
           borderRadius: "8px",
