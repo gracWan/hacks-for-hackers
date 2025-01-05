@@ -8,6 +8,9 @@ body {
   min-height: 100vh;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;
+  font-family: "Varela Round", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
  
