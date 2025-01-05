@@ -141,3 +141,21 @@ option {
   font-family: 'Arial', sans-serif;
   font-size: 16px;
 }
+
+.button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: white;
+  color: green;
+  text-align: center;
+  border: 2px solid green;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-link:hover {
+  background-color: green;
+  color: white;
+}
