@@ -42,6 +42,7 @@ export default function Login(){
         email: email, // Save email to Firestore
         language: language,
         languageLearn: languageLearn,
+        Points: 0,
         createdAt: new Date().toISOString(), // Store registration timestamp (optional)
       });
       console.log("worked")

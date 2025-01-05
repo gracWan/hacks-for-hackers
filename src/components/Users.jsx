@@ -23,7 +23,7 @@ export default function Users() {
 
         // Create JSX for modifiedHolder
         const tempModifiedHolder = tempHolder.map((data) => (
-          <Entry key={data.id} name={data.name} language={data.language} />
+          <Entry key={data.id} name={data.name} language={data.language} languageLearn={data.languageLearn}/>
         ));
         setModifiedHolder(tempModifiedHolder); // Update the modifiedHolder state
       } catch (error) {
