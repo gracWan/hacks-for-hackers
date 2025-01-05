@@ -25,7 +25,7 @@ export default function Profile() {
                       <i className="fas fa-ellipsis-h ms-4 me-2"></i> <span className="text-muted small">program link</span>
                       <span className="ms-3 me-4">|</span>
                     </p>
-                    <img src = {Chat} className="profileIcons"/>
+                    <img src = {Chat} className="d-flex"/>
                   </div>
                 </div>
               </div>
