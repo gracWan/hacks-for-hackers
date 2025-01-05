@@ -11,6 +11,7 @@ export default function Entry(props) {
       <div className="UserDetails">
         <span>Username: {props.name}</span>
         <span>Languages: {props.language || "Not Specified"}</span>
+        <span>Learning: {props.languageLearn}</span>
       </div>
     </article>
   );
