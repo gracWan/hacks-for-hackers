@@ -163,3 +163,18 @@ option {
   background-color: green;
   color: white;
 }
+
+.container_meeting{
+  background-color: black;
+}
+
+
+.MeetingBtn{
+  background-color: rgb(23, 0, 233);
+  border-radius: 5px;
+}
+
+
+.custom-form {
+  width:50px;
+}
