@@ -48,7 +48,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div>
+    <div class="page-content">
       <h1>Hi, welcome back {userInfo.name}</h1>
 
       <div className="grid-container">
