@@ -1,0 +1,59 @@
+body {
+    margin-left:5px;
+    font-family: "Varela Round", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+  .grid-item .icon {
+    display: block;
+    width: 50px; /* Adjust the size of the icon */
+    height: 50px;
+    margin-bottom: 10px; /* Add space between the icon and the text */
+  }
+  
+  h1 {
+    margin-left:20px;
+  }
+  
+  .num {
+    font-size: 40px;
+    display: block;
+    width: 100%;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 95%;
+    padding: 20px;
+  }
+  
+  .grid-item {
+    border-radius: 12px;
+    padding: 30px;
+    text-align: left; /* Align text to the left */
+    font-size: 9px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-left: 20px; /* Optional: add left padding to create space from the edge */
+  }
+  
+  .grid-item:nth-child(1) {
+    background: linear-gradient(to right, #f5e0da, #fad0c4);
+  }
+  
+  .grid-item:nth-child(2) {
+    background: linear-gradient(to right, #dfe5eb, #c9d6e3);
+  
+  }
+  
+  .grid-item:nth-child(3) {
+    background: linear-gradient(to right, #ede5df, #f3e2d7);
+  }
+  
+  .grid-item:nth-child(4) {
+      background: linear-gradient(to right, #e3d8e3, #d1c0d1);
+  }
+  
