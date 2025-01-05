@@ -60,7 +60,7 @@ export default function Login(){
   
   return (
         <section
-  className="vh-100 bg-image" style={{ backgroundColor: "#eee" }}
+  className="vh-100 bg-image" style={{ background: "linear-gradient(to top,rgb(255, 255, 255), #1a5e4e)" }}
 >
   <div className="mask d-flex align-items-center h-100 gradient-custom-3">
     <div className="container h-100">
@@ -68,59 +68,55 @@ export default function Login(){
         <div className="col-12 col-md-9 col-lg-7 col-xl-6">
           <div className="card" style={{ borderRadius: "15px" }}>
             <div className="card-body p-5">
-              <h2 className="text-uppercase text-center mb-5">Create an account</h2>
+              <h2 className="text-center mb-5">Create an account</h2>
 
               <form onSubmit={handleSubmit}>
                 <div data-mdb-input-init className="form-outline mb-4">
-                  <input type="text" id="form3Example1cg" className="form-control form-control-lg" value ={name} onChange={(e) => setName(e.target.value)}/>
-                  <label className="form-label" htmlFor="form3Example1cg">Your Name</label>
+                  <input placeholder="Name" type="text" id="form3Example1cg" className="form-control form-control-lg" value ={name} onChange={(e) => setName(e.target.value)}/>
+                  <label className="form-label" htmlFor="form3Example1cg"></label>
                 </div>
 
                 <div data-mdb-input-init className="form-outline mb-4">
-                  <input type="email" id="form3Example3cg" className="form-control form-control-lg" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                  <label className="form-label" htmlFor="form3Example3cg">Your Email</label>
+                  <input placeholder="Email" type="email" id="form3Example3cg" className="form-control form-control-lg" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                  <label className="form-label" htmlFor="form3Example3cg"></label>
                 </div>
 
-                <div class="form-outline mb-4">
+                <div className="form-outline mb-4 d-flex">
+  <div className="me-3" style={{ flex: 1 }}>
+    <select data-mdb-select-init value={language} onChange={(e) => setLanguage(e.target.value)} className="form-control">
+      <option value="#">Click to select</option>
+      <option value="English">English</option>
+      <option value="Spanish">Spanish</option>
+      <option value="Mandarin">Mandarin</option>
+      <option value="French">French</option>
+      <option value="Bengali">Bengali</option>
+      <option value="#">Other</option>
+    </select>
+    <label className="form-label">Known Language</label>
+  </div>
 
-                  <select data-mdb-select-init value = {language} onChange={(e) => setLanguage(e.target.value)}>
-                    <option value="#" >Language </option>
-                    <option value="English">English</option>
-                    <option value="Spanish">Spanish</option>
-                    <option value="Mandarin">Mandarin</option>
-                    <option value="French">French</option>
-                    <option value="Bengali">Bengali</option>
-                    <option value="#">Other</option>
-                  </select>
-                  <div>
-                    <label className="form-label" htmlFor="form3Example4cg">Language you know</label>
-                  </div>
-                </div>
+  <div style={{ flex: 1 }}>
+    <select data-mdb-select-init value={languageLearn} onChange={(e) => setLanguageLearn(e.target.value)} className="form-control">
+      <option value="#">Click to select</option>
+      <option value="English">English</option>
+      <option value="Spanish">Spanish</option>
+      <option value="Mandarin">Mandarin</option>
+      <option value="French">French</option>
+      <option value="Bengali">Bengali</option>
+      <option value="#">Other</option>
+    </select>
+    <label className="form-label">Target Language</label>
+  </div>
+</div>
 
-                <div class="form-outline mb-4">
-
-                  <select data-mdb-select-init value = {languageLearn} onChange={(e) => setLanguageLearn(e.target.value)}>
-                    <option value="#" >Language </option>
-                    <option value="English">English</option>
-                    <option value="Spanish">Spanish</option>
-                    <option value="Mandarin">Mandarin</option>
-                    <option value="French">French</option>
-                    <option value="Bengali">Bengali</option>
-                    <option value="#">Other</option>
-                  </select>
-                  <div>
-                    <label className="form-label" htmlFor="form3Example4cg">What you learn!</label>
-                  </div>
-                  
-              </div>
 
                 <div data-mdb-input-init className="form-outline mb-4">
-                  <input type="password" id="form3Example4cg" className="form-control form-control-lg" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                  <label className="form-label" htmlFor="form3Example4cg">Password</label>
+                  <input placeholder="Password" type="password" id="form3Example4cg" className="form-control form-control-lg" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                  <label className="form-label" htmlFor="form3Example4cg"></label>
                 </div>
 
                 <div data-mdb-input-init className="form-outline mb-4">
-                  <input type="password" id="form3Example4cdg" className="form-control form-control-lg" value={ConfirmPass} onChange={(e) => setConfirmPass(e.target.value)}/>
+                  <input placeholder="Password" type="password" id="form3Example4cdg" className="form-control form-control-lg" value={ConfirmPass} onChange={(e) => setConfirmPass(e.target.value)}/>
                   <label className="form-label" htmlFor="form3Example4cdg">Repeat your password</label>
                 </div>
 
