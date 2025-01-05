@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import LongLogo from "../images/long_logo.png";
 import { getAuth } from "firebase/auth";
 import { signInWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import app from "../main";
@@ -39,12 +40,15 @@ export default function Login(){
                 <div className="col-lg-6">
                   <div className="card-body p-md-5 mx-md-4">
                     <div className="text-center">
+                      
+                      <h4 className="mt-1 mb-5 pb-1">We are  
+
                       <img
-                        src=""
+                        src={LongLogo}
                         style={{ width: "185px" }}
                         alt="logo"
                       />
-                      <h4 className="mt-1 mb-5 pb-1">We are </h4>
+                      </h4>
                     </div>
 
                     <form>
@@ -59,7 +63,7 @@ export default function Login(){
                           value={email} onChange={(e) => setEmail(e.target.value)}
                         />
                         <label className="form-label" htmlFor="form2Example11">
-                          Username
+                          
                         </label>
                       </div>
 
@@ -68,11 +72,10 @@ export default function Login(){
                           type="password"
                           id="form2Example22"
                           className="form-control"
-                          placeholder="password"
+                          placeholder="Password"
                           value={password} onChange={(e) => setPassword(e.target.value)}
                         />
                         <label className="form-label" htmlFor="form2Example22">
-                          Password
                         </label>
                       </div>
 
@@ -86,6 +89,7 @@ export default function Login(){
                         >
                           Log in
                         </button>
+                        <br></br>
 
                         <a className="text-muted" href="#!">
                           Forgot password?
@@ -110,7 +114,7 @@ export default function Login(){
                 </div>
                 <div className="col-lg-6 d-flex align-items-center gradient-custom-2">
                   <div className="text-white px-3 py-4 p-md-5 mx-md-4">
-                    <h4 className="mb-4">We are more than just a company</h4>
+                    <h4 className="mb-4">Pitch title here</h4>
                     <p className="small mb-0">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore magna
