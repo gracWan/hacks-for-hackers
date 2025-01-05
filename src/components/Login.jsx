@@ -28,7 +28,7 @@ export default function Login(){
       };
 
       // Navigate to the home page
-      navigate("/hacks-for-hackers/Home", {state: userData});
+      navigate("/hacks-for-hackers/Home/Dashboard", {state: userData});
     } catch (error) {
       console.error("Error signing in:", error.message);
       setError(error.message); // Set the error state to display error message
