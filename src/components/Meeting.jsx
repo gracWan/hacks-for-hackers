@@ -12,6 +12,7 @@ import MeetingView from "./components/MeetingView";
 import Controls from "./components/Controls";
 import ParticipantView from "./components/ParticipantView";*/
 
+
 function JoinScreen({ getMeetingAndToken }) {
   const [meetingId, setMeetingId] = useState(null);
     const onClick = async () => {
@@ -20,24 +21,26 @@ function JoinScreen({ getMeetingAndToken }) {
     return (
       <div>
         <input
+          className="form-control form-control-lg"
           type="text"
           placeholder="Enter Meeting Id"
           onChange={(e) => {
             setMeetingId(e.target.value);
           }}
         />
-        <button onClick={onClick}>Join</button>
+        <button onClick={onClick} class="btn btn-outline-primary " >Join</button>
         {" or "}
-        <button onClick={onClick}>Create Meeting</button>
+        <button onClick={onClick} class="btn btn-outline-primary">Create Meeting</button>
       </div>
     );
 }
+
 
 function ParticipantView(props) {
   const micRef = useRef(null);
     const { webcamStream, micStream, webcamOn, micOn, isLocal, displayName } =
       useParticipant(props.participantId);
-  
+ 
     const videoStream = useMemo(() => {
       if (webcamOn && webcamStream) {
         const mediaStream = new MediaStream();
@@ -45,13 +48,13 @@ function ParticipantView(props) {
         return mediaStream;
       }
     }, [webcamStream, webcamOn]);
-  
+ 
     useEffect(() => {
       if (micRef.current) {
         if (micOn && micStream) {
           const mediaStream = new MediaStream();
           mediaStream.addTrack(micStream.track);
-  
+ 
           micRef.current.srcObject = mediaStream;
           micRef.current
             .play()
@@ -63,7 +66,7 @@ function ParticipantView(props) {
         }
       }
     }, [micStream, micOn]);
-  
+ 
     return (
       <div>
         <p>
@@ -94,6 +97,7 @@ function ParticipantView(props) {
     );
 }
 
+
 function Controls(props) {
   const { leave, toggleMic, toggleWebcam } = useMeeting();
     return (
@@ -104,6 +108,7 @@ function Controls(props) {
       </div>
     );
 }
+
 
 function MeetingView(props) {
    const [joined, setJoined] = useState(null);
@@ -123,9 +128,9 @@ function MeetingView(props) {
         setJoined("JOINING");
         join();
       };
-    
+   
       return (
-        <div className="container">
+        <div className="container_meeting">
           <h3>Meeting Id: {props.meetingId}</h3>
           {joined && joined == "JOINED" ? (
             <div>
@@ -147,8 +152,10 @@ function MeetingView(props) {
       );
 }
 
+
 function App() {
   const [meetingId, setMeetingId] = useState(null);
+
 
   //Getting the meeting id by calling the api we just wrote
   const getMeetingAndToken = async (id) => {
@@ -157,10 +164,12 @@ function App() {
     setMeetingId(meetingId);
   };
 
+
   //This will set Meeting Id to null when meeting is left or ended
   const onMeetingLeave = () => {
     setMeetingId(null);
   };
+
 
   return authToken && meetingId ? (
     <MeetingProvider
@@ -178,5 +187,6 @@ function App() {
     <JoinScreen getMeetingAndToken={getMeetingAndToken} />
   );
 }
+
 
 export default App;
