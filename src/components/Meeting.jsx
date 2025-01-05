@@ -19,20 +19,31 @@ function JoinScreen({ getMeetingAndToken }) {
       await getMeetingAndToken(meetingId);
     };
     return (
-      <div>
-        <input
-          className="form-control form-control-lg"
-          type="text"
-          placeholder="Enter Meeting Id"
-          onChange={(e) => {
-            setMeetingId(e.target.value);
-          }}
-        />
-        <button onClick={onClick} class="btn btn-outline-primary " >Join</button>
-        {" or "}
-        <button onClick={onClick} class="btn btn-outline-primary">Create Meeting</button>
+      <div
+        className="d-flex justify-content-center align-items-center"
+        style={{ height: "100vh" }}
+      >
+        <div className="d-flex align-items-center">
+          <input
+            className="form-control form-control-sm me-2"
+            type="text"
+            placeholder="Enter Meeting Id"
+            style={{ width: "200px" }}
+            onChange={(e) => {
+              setMeetingId(e.target.value);
+            }}
+          />
+          <button onClick={onClick} className="btn btn-outline-primary me-2">
+            Join
+          </button>
+          {" or "}
+          <button onClick={onClick} className="btn btn-outline-primary ms-2">
+            Create Meeting
+          </button>
+        </div>
       </div>
     );
+        
 }
 
 
