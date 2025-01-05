@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
 import app from "../main";
 import Entry from "./Entry";
 
@@ -11,19 +11,25 @@ export default function Users() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, "users"));
+        // Query to fetch only users where language is 'English'
+        const q = query(collection(db, "users"), where("language", "==", "English"));
+        const querySnapshot = await getDocs(q);
         const tempHolder = [];
-        
+
         querySnapshot.forEach((doc) => {
           tempHolder.push({ id: doc.id, ...doc.data() }); // Collect data
         });
 
-        console.log("Holder array:", tempHolder);
         setHolder(tempHolder); // Update the holder state
 
-        // Create JSX for modifiedHolder
+        // Create JSX for modifiedHolder, including the `languageLearn` field
         const tempModifiedHolder = tempHolder.map((data) => (
-          <Entry key={data.id} name={data.name} language={data.language} />
+          <Entry
+            key={data.id}
+            name={data.name}
+            language={data.language}
+            languageLearn={data.languageLearn} // Include languageLearn in Entry component
+          />
         ));
         setModifiedHolder(tempModifiedHolder); // Update the modifiedHolder state
       } catch (error) {
