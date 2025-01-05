@@ -35,7 +35,7 @@ export default function Login(){
     }
   };
     return (
-    <section className="h-100 gradient-form" style={{ backgroundColor: "#eee" }}>
+    <section className="h-100 gradient-form no-scrollbar" style={{ backgroundColor: "#eee" }}>
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-xl-10">
@@ -102,16 +102,9 @@ export default function Login(){
 
                       <div className="d-flex align-items-center justify-content-center pb-4">
                         <p className="mb-0 me-2">Don't have an account?</p>
-                        <button
-                          type="button"
-                          data-mdb-button-init
-                          data-mdb-ripple-init
-                          className="btn btn-outline-danger"
-                        >
                          <Link to ="/hacks-for-hackers/Register">
                           Create new
                          </Link> 
-                        </button>
                       </div>
                     </form>
                   </div>

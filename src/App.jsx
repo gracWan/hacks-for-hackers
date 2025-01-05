@@ -19,7 +19,6 @@ export default function App() {
       <Route  path = "/hacks-for-hackers/Home" element ={<Home/>}/>
       <Route  path = "/hacks-for-hackers/Meeting" element ={<Meeting/>}/>
       <Route  path = "/hacks-for-hackers/Message" element ={<Message/>}/>
-      <Route  path = "/hacks-for-hackers/Search" element ={<Navbar/>}/>
       </Routes>
     </>
     

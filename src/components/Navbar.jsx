@@ -3,13 +3,13 @@ import Camera from "../images/video-camera.png";
 import LongLogo from "../images/long_logo.png";
 import SideNav from "./SideNav";
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <>
       <SideNav />
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand">
             <img src={LongLogo} alt="Logo" width="180" height="50" />
           </a>
           <button
@@ -36,6 +36,9 @@ export default function Navbar() {
                 </Link>
               </li>
             </ul>
+          </div>
+          <div>
+          <div id="google_translate_element"></div>
           </div>
         </div>
       </nav>

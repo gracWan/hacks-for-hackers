@@ -8,7 +8,9 @@ export default function Home(){
 
     return(
         <>
-            <Navbar/>
+            <Navbar 
+                email = {userData.email}
+            />
             <Users 
                 email = {userData.email}
             />
