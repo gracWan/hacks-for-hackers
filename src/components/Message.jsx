@@ -14,13 +14,13 @@ import 'stream-chat-react/dist/css/v2/index.css';
 
 // other imports
 import 'stream-chat-react/dist/css/v2/index.css';
-//import '../layout.css';
+import './layout.css';
 
 // Your Stream app information
-const apiKey = 'dz5f4d5kzrue';
-const userId = 'dark-thunder-7';
-const userName = 'dark';
-const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZGFyay10aHVuZGVyLTciLCJleHAiOjE3MzYwNDM5MzF9.hUtPU_j0MKvKccgc0izKBIdIr38-qPsnhHJ8PVXAXPg';
+const apiKey = 'cyaw4h7bya7e';
+const userId = 'grace';
+const userName = 'grace';
+const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZ3JhY2UifQ.iST__vuUjbnraFvRoGjV1DncZKmXNsoEkPVc191Pw2w';
 
 const user = {
   id: userId,
@@ -41,7 +41,7 @@ const Message = () => {
 
     const newChannel = client.channel('messaging', 'custom_channel_id', {
       image: 'https://getstream.io/random_png/?name=react',
-      name: 'Talk about React',
+      name: 'Bob',
       members: [userId],
     });
 
