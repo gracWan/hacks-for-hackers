@@ -13,6 +13,10 @@ export default function Entry(props) {
       style={{ position: "relative" }} // To position the hover box
     >
       {/* User Profile Image */}
+      
+      {/* User Details */}
+      <div className="UserDetails">
+
       <img 
         src={DefaultImg} 
         alt="User Profile" 
@@ -20,11 +24,10 @@ export default function Entry(props) {
         style={{ cursor: "pointer" }} // Change cursor on hover
       />
 
-      {/* User Details */}
-      <div className="UserDetails">
-        <span>Username: {props.name}</span>
-        <span>Languages: {props.language || "Not Specified"}</span>
-        <span>Learning: {props.languageLearn}</span>
+        <span>{props.name}</span>
+        <span>Points: {props.Points || "0"}</span>
+        <span>Knows {props.language || "Not Specified"}</span>
+        <span>Learning {props.languageLearn}</span>
       </div>
 
       {/* Profile Hover Box */}
