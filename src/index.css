@@ -22,7 +22,7 @@ body {
   padding-top: 200px;
 }
 
-.sidenav a {
+.sidenavComponents {
   padding: 10px 10px 10px 10px;
   margin: 10px 0px 90px 0px;
   font-size: 25px;
@@ -31,7 +31,7 @@ body {
   text-decoration: none;
 }
 
-.sidenav a:hover {
+.sidenavComponents:hover {
   background-color: #029D52;
   color: white;
 }

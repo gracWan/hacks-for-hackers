@@ -3,10 +3,11 @@ import Camera from "../images/video-camera.png";
 import LongLogo from "../images/long_logo.png";
 import SideNav from "./SideNav";
 
+
 export default function Navbar(props) {
   return (
     <>
-      <SideNav />
+      <SideNav email = {props.email}/>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand">
