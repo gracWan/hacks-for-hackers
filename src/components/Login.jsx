@@ -22,8 +22,12 @@ export default function Login(){
         console.log("Verification email sent.");
       }
 
+      const userData = {
+        email,
+      };
+
       // Navigate to the home page
-      navigate("/hacks-for-hackers/Home");
+      navigate("/hacks-for-hackers/Home", {state: userData});
     } catch (error) {
       console.error("Error signing in:", error.message);
       setError(error.message); // Set the error state to display error message
